@@ -3,13 +3,12 @@
 ;;  Encode usage: ./base64 str
 ;;  Decode usage: ./base64 -d|--decode str
 
-(if (= 3 (length (main-args)))
-	(println (base64-enc (main-args 2) true))
-	(if (and (= 4 (length (main-args)))
-			(or (= (main-args 2) "-d") (= (main-args 2) "--decode")))
+(if
+(= 3 (length (main-args))) (println (base64-enc (main-args 2) true))
+(and (= 4 (length (main-args)))
+	 (or (= (main-args 2) "-d") (= (main-args 2) "--decode")))
 		(println (base64-dec (main-args 3)))
-		(println "Encode usage: ./base64 str\nDecode usage: ./base64 -d|--decode str")
-	)
+(println "Encode usage: ./base64 str\nDecode usage: ./base64 -d|--decode str")
 )
 
 (exit)
