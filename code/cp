@@ -1,0 +1,17 @@
+#!/usr/local/bin/newlisp
+
+;;  cp usage: ./cp source target
+
+(case (length (main-args))
+	(4
+		(set 'src (main-args 2) 'dst (main-args 3))
+		(set 'content (read-file (main-args 2)))
+		(if content
+			(if (not (write-file dst content)) (println "write " dst " failed!" ))
+			(println "read " src " failed!" )
+		)
+	)
+	(true (println "Usage: cp source target"))
+)
+
+(exit)
