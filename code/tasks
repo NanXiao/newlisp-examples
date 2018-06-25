@@ -1,6 +1,6 @@
 #!/usr/local/bin/newlisp
 
-;;
+;; launch tasks for every logic cpu.
 
 (import "libc.so" "sysconf")
 
