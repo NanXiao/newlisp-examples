@@ -1,6 +1,7 @@
 #!/usr/local/bin/newlisp
 
 ;; launch tasks for every logic cpu.
+;; Reference: http://www.newlispfanclub.alh.net/forum/viewtopic.php?f=16&t=4946&sid=f5e79c58cd163c7c3e5372b3f14319b7
 
 (import "libc.so" "sysconf")
 
@@ -14,7 +15,7 @@
 (set 'result-array cpu-num)
 
 (dotimes (i cpu-num)
-	(spawn 'p (println i)))
+	(spawn (last (push (sym (string "ret" i)) returns -1)) (println i)))
 	
 (until (true? (sync 10 report)))
 
