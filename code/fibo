@@ -1,0 +1,20 @@
+#!/usr/local/bin/newlisp
+
+;; http://www.newlisp.org/downloads/CodePatterns.html#toc-5
+
+(define (fibo n , f)
+    (set 'f '(1 0))
+    (dotimes (i n)
+		(push (+ (f 0) (f 1)) f))
+	(pop f)
+)
+
+(case (length (main-args))
+	(3
+		(set 'n (int (main-args 2)))
+		(if (< n 1) (println 0) (println (fibo n)))
+	)
+	(true (println "Usage: fibo int"))
+)
+
+(exit)
