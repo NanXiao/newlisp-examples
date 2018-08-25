@@ -1,4 +1,7 @@
 #!/usr/local/bin/newlisp
+
+;; https://nanxiao.me/en/the-difference-of-loopback-packets-on-linux-and-openbsd/
+
 (set 'arglist (main-args))
 (while (> (length arglist) 2)
 	(set 'file (pop arglist -1))
